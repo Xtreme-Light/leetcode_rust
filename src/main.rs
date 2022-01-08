@@ -1,6 +1,6 @@
+mod dp;
 mod gray_code;
 mod is_palindrome;
-
 fn main() {
     println!("Hello, world!");
     for i in 0..5 {
