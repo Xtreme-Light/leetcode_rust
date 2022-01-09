@@ -1,11 +1,12 @@
 use crate::Solution;
-/// https://leetcode-cn.com/problems/n-th-tribonacci-number/
-/// 泰波那契序列Tn定义如下：
-///
-/// T0 = 0, T1 = 1, T2 = 1, 且在 n >= 0的条件下 Tn+3 = Tn + Tn+1 + Tn+2
-///
-/// 给你整数 n，请返回第 n 个泰波那契数 Tn 的值。
+
 impl Solution {
+    /// https://leetcode-cn.com/problems/n-th-tribonacci-number/
+    /// 泰波那契序列Tn定义如下：
+    ///
+    /// T0 = 0, T1 = 1, T2 = 1, 且在 n >= 0的条件下 Tn+3 = Tn + Tn+1 + Tn+2
+    ///
+    /// 给你整数 n，请返回第 n 个泰波那契数 Tn 的值。
     pub fn tribonacci(n: i32) -> i32 {
         if n == 0 {
             return 0;
@@ -28,6 +29,9 @@ impl Solution {
         }
         _temp
     }
+    pub fn tribonacci_2(n: i32) -> i32 {
+        (0..n).fold((0, 1, 1), |(a, b, c), _| (b, c, a + b + c)).0
+    }
 }
 #[cfg(test)]
 mod test {
@@ -38,6 +42,14 @@ mod test {
         let fib = Solution::tribonacci(4);
         assert_eq!(4, fib);
         let fib = Solution::tribonacci(25);
+        assert_eq!(1389537, fib);
+    }
+
+    #[test]
+    pub fn test_tribonacci_2() {
+        let fib = Solution::tribonacci_2(4);
+        assert_eq!(4, fib);
+        let fib = Solution::tribonacci_2(25);
         assert_eq!(1389537, fib);
     }
 }

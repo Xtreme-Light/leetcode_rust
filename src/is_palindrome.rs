@@ -1,11 +1,12 @@
 use crate::Solution;
-/// https://leetcode-cn.com/problems/palindrome-number/
-/// 回文
+
 impl Solution {
     /// 这样虽然只有一行代码，但是效率和内存占用都比较高
     pub fn is_palindrome(x: i32) -> bool {
         x.to_string() == x.to_string().chars().rev().collect::<String>()
     }
+    /// https://leetcode-cn.com/problems/palindrome-number/
+    /// 回文
     pub fn is_palindrome_2(x: i32) -> bool {
         if x < 0 {
             return false;
