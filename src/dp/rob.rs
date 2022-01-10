@@ -14,6 +14,7 @@ impl Solution {
             .fold((0, 0), |acc, i| (acc.0.max(acc.1 + i), acc.0))
             .0
     }
+
 }
 
 #[cfg(test)]
