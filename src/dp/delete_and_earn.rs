@@ -12,7 +12,7 @@ impl Solution {
     /// 开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。
     ///
     pub fn delete_and_earn(nums: Vec<i32>) -> i32 {
-        let mut n = *nums.iter().max().unwrap() as usize;
+        let n = *nums.iter().max().unwrap() as usize;
         // 记录各个数字出现的次数
         let mut arr = vec![0; n + 1];
         for i in 0..nums.len() {
